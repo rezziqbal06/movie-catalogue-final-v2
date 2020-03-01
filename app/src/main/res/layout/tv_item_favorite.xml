@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_img_fav"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp">
+        <ImageView
+            android:id="@+id/img_tv_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_judul_tv_fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/cv_img_fav"
+        android:textSize="20sp"
+        android:fontFamily="@font/montserrat_bold" />
+
+    <TextView
+        android:id="@+id/tv_date_tv_fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:layout_below="@id/tv_judul_tv_fav"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toRightOf="@id/cv_img_fav" />
+
+    <TextView
+        android:id="@+id/tv_vote_tv_fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cv_img_fav"
+        android:layout_below="@id/tv_date_tv_fav"
+        android:layout_marginLeft="16dp"
+        android:textSize="26sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/btn_delete_fav_tv"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.3"
+        android:layout_toRightOf="@id/cv_img_fav"
+        android:layout_below="@id/tv_vote_tv_fav"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

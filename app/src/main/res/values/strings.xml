@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Movie Catalogue</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_tv">TV</string>
+    <string name="title_favorite_movie">Favorite Movie</string>
+    <string name="title_favorite_tv">Favorite TV Show</string>
+    <string name="detail_movie">Movie Detail</string>
+    <string name="detail_tv">TV Detail</string>
+    <string name="setting_language">Setting Language</string>
+    <string name="movie_favorite">Favorite Movie</string>
+    <string name="tv_show_favorite">Favorite TV Show</string>
+    <string name="tv_choose_favorite">Choose to Favorite</string>
+    <string name="search">Search</string>
+    <string name="item_not_found">Not found</string>
+    <string name="image_tv">TV Image</string>
+    <string name="image_movie">Movie image</string>
+    <string name="done_insert">Insert Successfully</string>
+    <string name="appwidgetmovie_text">FAVORITE MOVIE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="empty_text">NO DATA</string>
+    <string name="appwidgettv_text">FAVORITE TV</string>
+    <string name="title_daily_reminder">Daily Reminder</string>
+    <string name="daily_reminder_message">Come in to see your favorite  cinema!</string>
+    <string name="title_release_reminder">Release Reminder</string>
+    <string name="daily_reminder_enabled">Daily reminder enabled</string>
+    <string name="daily_reminder_disabled">Daily reminder disabled</string>
+    <string name="release_reminder_enabled">Release reminder enabled</string>
+    <string name="release_reminder_disabled">Release reminder disabled</string>
+    <string name="setting_reminder">Setting Reminder</string>
+</resources>

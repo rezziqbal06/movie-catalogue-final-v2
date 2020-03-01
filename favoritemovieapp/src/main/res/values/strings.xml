@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FavoriteMovieApp</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_tv">TV</string>
+    <string name="title_favorite_movie">Favorite Movie</string>
+    <string name="title_favorite_tv">Favorite TV Show</string>
+    <string name="detail_movie">Movie Detail</string>
+    <string name="detail_tv">TV Detail</string>
+    <string name="setting_language">Setting Language</string>
+    <string name="remove_failed">Removing failed</string>
+    <string name="not_found">Not found</string>
+</resources>

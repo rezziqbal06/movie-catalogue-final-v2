@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FavoriteMovieApp</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_movies">Film</string>
+    <string name="title_tv">Sinetron</string>
+    <string name="title_favorite_movie">Film Favorit</string>
+    <string name="title_favorite_tv">Sinetron Favorit</string>
+    <string name="detail_movie">Detail Film</string>
+    <string name="detail_tv">Detail Sinetron</string>
+    <string name="setting_language">Pengaturan Bahasa</string>
+    <string name="remove_failed">Gagal menghapus</string>
+    <string name="not_found">Tidak ada</string>
+</resources>
