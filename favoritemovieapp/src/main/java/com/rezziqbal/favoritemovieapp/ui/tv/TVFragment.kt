@@ -1,10 +1,6 @@
 package com.rezziqbal.favoritemovieapp.ui.tv
 
-import android.content.Intent
-import android.database.ContentObserver
 import android.os.Bundle
-import android.os.Handler
-import android.os.HandlerThread
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,13 +9,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rezziqbal.favoritemovieapp.R
-import com.rezziqbal.favoritemovieapp.db.DatabaseContract
-import com.rezziqbal.favoritemovieapp.db.DatabaseContract.TVColumns.Companion.CONTENT_URI_TV
 import com.rezziqbal.favoritemovieapp.entity.Tv
-import com.rezziqbal.favoritemovieapp.ui.movie.MovieViewModel
+import com.rezziqbal.favoritemovieapp.MainViewModel
 import kotlinx.android.synthetic.main.fragment_tv.*
 
 class TVFragment : Fragment() {
@@ -30,7 +23,7 @@ class TVFragment : Fragment() {
     }
     private var tv: ArrayList<Tv> = ArrayList<Tv>()
 
-    private lateinit var mViewModel: MovieViewModel
+    private lateinit var mViewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +31,7 @@ class TVFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_tv, container, false)
-        mViewModel = ViewModelProvider(requireActivity())[MovieViewModel::class.java]
+        mViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
 
         return root
     }
@@ -57,10 +50,8 @@ class TVFragment : Fragment() {
         mViewModel.getTv().observe(requireActivity(), Observer {
             hideLoader()
             if(it != null){
-                setDataToAdapter(tv)
                 tv = it
-                Log.d("tv ", it.toString())
-                Log.d("tv size ", it.size.toString())
+                setDataToAdapter(tv)
             }else{
                 showMessage(resources.getString(R.string.not_found))
             }

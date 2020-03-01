@@ -1,4 +1,4 @@
-package com.rezziqbal.favoritemovieapp.ui.movie
+package com.rezziqbal.favoritemovieapp
 
 import android.content.ContentValues
 import android.content.Context
@@ -19,7 +19,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
-class MovieViewModel : ViewModel() {
+class MainViewModel : ViewModel() {
 
     private var movieData = MutableLiveData<ArrayList<Movie>>()
     private var tvData = MutableLiveData<ArrayList<Tv>>()

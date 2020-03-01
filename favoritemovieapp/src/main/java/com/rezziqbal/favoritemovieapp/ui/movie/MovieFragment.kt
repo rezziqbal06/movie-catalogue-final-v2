@@ -1,10 +1,6 @@
 package com.rezziqbal.favoritemovieapp.ui.movie
 
-import android.database.ContentObserver
 import android.os.Bundle
-import android.os.Handler
-import android.os.HandlerThread
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,11 +8,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
+import com.rezziqbal.favoritemovieapp.MainViewModel
 import com.rezziqbal.favoritemovieapp.R
-import com.rezziqbal.favoritemovieapp.db.DatabaseContract
-import com.rezziqbal.favoritemovieapp.db.DatabaseContract.MovieColumns.Companion.CONTENT_URI_MOVIE
 import com.rezziqbal.favoritemovieapp.entity.Movie
 import kotlinx.android.synthetic.main.fragment_movie.*
 
@@ -27,7 +21,7 @@ class MovieFragment : Fragment() {
     }
     private var movie: ArrayList<Movie> = ArrayList<Movie>()
 
-    private lateinit var movieViewModel: MovieViewModel
+    private lateinit var mainViewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +30,7 @@ class MovieFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_movie, container, false)
 
-        movieViewModel = ViewModelProvider(requireActivity())[MovieViewModel::class.java]
+        mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         return root
     }
 
@@ -51,12 +45,11 @@ class MovieFragment : Fragment() {
     }
 
     private fun loadMovie() {
-        movieViewModel.getMovie().observe(requireActivity(), Observer {
+        mainViewModel.getMovie().observe(requireActivity(), Observer {
             hideLoader()
             if(it != null){
                 setDataToAdapter(it)
                 movie = it
-                Log.d("movie ", it.toString())
             }else{
                 showMessage(resources.getString(R.string.not_found))
             }
@@ -70,7 +63,7 @@ class MovieFragment : Fragment() {
         rv_movie.adapter = adapter
         adapter.setOnItemClickCallback(object: MovieAdapter.OnItemClickCallback{
             override fun onItemClicked(position: Int, data: Movie) {
-                movieViewModel.removeFavoriteMovie(activity!!, data.id.toString()).observe(activity!!, Observer {
+                mainViewModel.removeFavoriteMovie(activity!!, data.id.toString()).observe(activity!!, Observer {
                     if(it > 0){
                         adapter.removeItem(position)
                     }else{
