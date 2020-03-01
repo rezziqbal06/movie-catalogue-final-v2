@@ -5,21 +5,15 @@
     android:layout_height="match_parent"
     android:layout_marginBottom="?attr/actionBarSize">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <ProgressBar
         android:id="@+id/movie_progressbar"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:visibility="invisible"
         android:layout_centerInParent="true" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_movie"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
 
 </RelativeLayout>

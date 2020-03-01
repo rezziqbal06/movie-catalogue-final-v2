@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        contentResolver.registerContentObserver(DatabaseContract.MovieColumns.CONTENT_URI_MOVIE, true, movieObserver)
         contentResolver.registerContentObserver(DatabaseContract.TVColumns.CONTENT_URI_TV, true, movieObserver)
+        contentResolver.registerContentObserver(DatabaseContract.MovieColumns.CONTENT_URI_MOVIE, true, movieObserver)
 
         mViewModel.getDataFromDatabase(this)
     }
